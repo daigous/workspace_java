@@ -31,6 +31,10 @@ public class CartaoPrePago {
 			return false;
 		}
 	}
+	
+	public String toString() {
+		return "Cartão: "+this.numeroCartao+". Titular: "+this.nomeTitular+". Saldo: "+this.saldo;
+	}
 
 	public String getNumeroCartao() {
 		return numeroCartao;
