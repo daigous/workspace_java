@@ -1,13 +1,16 @@
 package userinterface;
+
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 import model.CartaoCashBack;
 import model.CartaoPrePago;
+import model.DiegoException;
 
 public class Compra {
 	public static void main(String[] args) {
 		
-		
+		/*
 		System.out.println("Cartão comum: ");
 		CartaoPrePago c = new CartaoPrePago("1234-5678-1010", "Diego Augusto", 2025, 8);
 		c.adicionarCredito(200);
@@ -32,9 +35,9 @@ public class Compra {
 		g.adicionarCredito(200);
 		g.comprar(150);
 		System.out.println("");
+		*/
 		
 		
-		/*
 		Scanner teclado = new Scanner(System.in);
 		System.out.printf("Digite seu nome: ");
 		String nome = teclado.nextLine();
@@ -60,8 +63,12 @@ public class Compra {
 			case 1:
 				System.out.println("Qual valor será adicionado ao Cartão?");
 				double valor = teclado.nextDouble();
-				c.adicionarCredito(valor);
-				System.out.println("");
+				try { 
+					c.adicionarCredito(valor);
+					System.out.println("");
+				} catch(DiegoException d) {
+					System.out.println(d.getMessage());
+				}
 				break;
 			case 2:
 				System.out.println("Qual o valor da compra?");
@@ -74,7 +81,7 @@ public class Compra {
 				System.out.println("");
 				break;
 			}
-		}*/
+		}
 	}
 }
 

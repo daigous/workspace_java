@@ -16,6 +16,9 @@ public class CartaoPrePago {
 	}
 	
 	public void adicionarCredito(double valor) {
+		if (valor < 0) {
+			throw new DiegoException("O Valor deve ser maior que zero.");
+		}
 		this.saldo = this.saldo + valor;
 		System.out.println("Crédito no valor de R$"+valor+" adicionado. Saldo total: R$ "+this.saldo);
 	}
